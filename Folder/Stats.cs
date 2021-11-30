@@ -24,7 +24,6 @@ namespace CSharpDemoCodes
 
             //Median Calculation
             Array.Sort(array);
-            //Console.WriteLine(array.Length);
             int m = (array.Length) / 2;
             Console.WriteLine($"Median is {array[m]}");
 

@@ -1,5 +1,14 @@
-﻿Console.WriteLine("This is the first line.");
+﻿// See https://aka.ms/new-console-template for more information
+/*Console.WriteLine("Hello, World!");*/
 
-Console.Write("This is ");
-Console.Write("the second ");
-Console.Write("line.");
+string name = "Bob";
+int messages = 3;
+decimal temperature = 34.4m;
+
+Console.Write("Hello, ");
+Console.Write(name);
+Console.Write("! You have ");
+Console.Write(messages);
+Console.Write(" in your inbox. The temperature is ");
+Console.Write(temperature);
+Console.Write(" celsius.");

@@ -1,5 +1,22 @@
-﻿Console.WriteLine("This is the first line.");
+﻿//Main File
+using CSharpDemoCodes;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-Console.Write("This is ");
-Console.Write("the second ");
-Console.Write("line.");
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Hello from Program.cs\n");
+
+            Stats.ShowOutput();
+        }
+
+
+    }
+}

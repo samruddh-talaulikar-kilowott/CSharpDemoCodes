@@ -8,61 +8,44 @@ namespace CSharpDemoCodes
 {
     internal class Stats
     {
-        public static void ShowOutput()
+        public static void MeanMedianMode()
         {
-            int[] numbers = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
-            int num_value = 15;
+            int[] array = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
+            int sum = 0, maxcount = 0, maxnum = 0;
+            decimal mean = 0;
 
+            //Mean Calculation
+            foreach (int test in array)
+            {
+                sum = sum + test;
+            }
+            mean = (decimal)sum / array.Length;
+            Console.WriteLine($"Mean is {mean}");
+
+            //Median Calculation
+            Array.Sort(array);
+            //Console.WriteLine(array.Length);
+            int m = (array.Length) / 2;
+            Console.WriteLine($"Median is {array[m]}");
 
             //Mode Calculation
-            float tot = 0;
-            float mean = 0;
-            for (int i = 0; i < num_value; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                tot = tot + numbers[i];
-            }
-            mean = tot / num_value;
-            Console.Write("Mean: ");
-            Console.WriteLine(mean);
-
-
-            //Median calculation   
-            float mid = 0;
-            if (num_value % 2 == 0)
-            {
-                int temp = (num_value / 2) - 1;
-                for (int i = 0; i < num_value; i++)
+                int count = 0;
+                for (int j = 1; j < array.Length - 1; j++)
                 {
-                    if (temp == i || (temp + 1) == i)
+                    if (array[i] == array[j])
                     {
-                        mid = mid + numbers[i];
+                        count++;
                     }
                 }
-                mid = mid / 2;
-                Console.Write("Median: ");
-                Console.WriteLine(mid);
-            }
-            else
-            {
-                int temp = (num_value / 2);
-                for (int i = 0; i < num_value; i++)
+                if (count > maxcount)
                 {
-                    if (temp == i)
-                    {
-                        mid = numbers[i];
-                        Console.Write("Median: ");
-                        Console.WriteLine(mid);
-                    }
+                    maxcount = count;
+                    maxnum = array[i];
                 }
             }
-
-
-
-
-
-
-
-
+            Console.WriteLine($"Mode is {maxnum}");
         }
     }
 }

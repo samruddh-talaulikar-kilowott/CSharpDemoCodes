@@ -14,7 +14,7 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Hello from Program.cs\n");
 
-            Stats.ShowOutput();
+            Stats.MeanMedianMode();
         }
 
 

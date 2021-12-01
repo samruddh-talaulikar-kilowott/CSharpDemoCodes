@@ -8,6 +8,8 @@ namespace CSharpDemoCodes
 {
     internal class StatsProcessor
     {
+
+        // we r passing array in each function
         public decimal Mean()
         {
             int[] array = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };

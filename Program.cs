@@ -10,7 +10,6 @@ namespace ConsoleApp1
 {
     internal class Program
     {
-        static int[] array = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello from Program.cs\n");

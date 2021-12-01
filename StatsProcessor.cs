@@ -3,60 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace CSharpDemoCodes
 {
     internal class StatsProcessor
     {
-
-        // we r passing array in each function
+        internal int[] Numbers { private get; set; }
         public decimal Mean()
         {
-            int[] array = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
-            int sum = 0 ;
+            int sum = 0;
             decimal mean = 0;
-
-            //Mean Calculation
-            foreach (int test in array)
+            //MEAN CALCULATION
+            foreach (int test in Numbers)
             {
                 sum = sum + test;
             }
-            mean = (decimal)sum / array.Length;
-            //Console.WriteLine($"Mean is {mean}");
+            mean = (decimal)sum / Numbers.Length;
             return mean;
-
         }
-
-
-
-
         public int Median()
         {
-            //Median Calculation
-            int[] array = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
-            Array.Sort(array);
-            //Console.WriteLine(array.Length);
-            int m = (array.Length) / 2;
-            //Console.WriteLine($"Median is {array[m]}");
-            return m;
-
-
+            //MEDIAN CALCULATION
+            Array.Sort(Numbers);
+            int m = (Numbers.Length) / 2;
+            int n = Numbers[m];
+            return n;
         }
-
-
-
-
         public int Mode()
         {
-            int[] array = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
+            //MODE CALCULATION
             int maxcount = 0, maxnum = 0;
-            //Mode Calculation
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < Numbers.Length; i++)
             {
                 int count = 0;
-                for (int j = 1; j < array.Length - 1; j++)
+                for (int j = 1; j < Numbers.Length - 1; j++)
                 {
-                    if (array[i] == array[j])
+                    if (Numbers[i] == Numbers[j])
                     {
                         count++;
                     }
@@ -64,15 +45,10 @@ namespace CSharpDemoCodes
                 if (count > maxcount)
                 {
                     maxcount = count;
-                    maxnum = array[i];
+                    maxnum = Numbers[i];
                 }
             }
-            //Console.WriteLine($"Mode is {maxnum}");
             return maxnum;
         }
-
-
-
-
     }
 }

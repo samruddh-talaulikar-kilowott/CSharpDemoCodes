@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CSharpDemoCodes
 {
-    internal class Stats
+    internal class StatsProcessor
     {
-        public static void MeanMedianMode()
+        public decimal Mean()
         {
             int[] array = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
-            int sum = 0, maxcount = 0, maxnum = 0;
+            int sum = 0 ;
             decimal mean = 0;
 
             //Mean Calculation
@@ -20,14 +20,34 @@ namespace CSharpDemoCodes
                 sum = sum + test;
             }
             mean = (decimal)sum / array.Length;
-            Console.WriteLine($"Mean is {mean}");
+            //Console.WriteLine($"Mean is {mean}");
+            return mean;
 
+        }
+
+
+
+
+        public int Median()
+        {
             //Median Calculation
+            int[] array = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
             Array.Sort(array);
             //Console.WriteLine(array.Length);
             int m = (array.Length) / 2;
-            Console.WriteLine($"Median is {array[m]}");
+            //Console.WriteLine($"Median is {array[m]}");
+            return m;
 
+
+        }
+
+
+
+
+        public int Mode()
+        {
+            int[] array = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
+            int maxcount = 0, maxnum = 0;
             //Mode Calculation
             for (int i = 0; i < array.Length; i++)
             {
@@ -45,7 +65,12 @@ namespace CSharpDemoCodes
                     maxnum = array[i];
                 }
             }
-            Console.WriteLine($"Mode is {maxnum}");
+            //Console.WriteLine($"Mode is {maxnum}");
+            return maxnum;
         }
+
+
+
+
     }
 }

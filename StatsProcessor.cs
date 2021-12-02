@@ -20,6 +20,10 @@ namespace FirstConsoleApp
             return result;
         }
 
+
+
+
+
         private decimal CalculateMean()
         {
             int sum = 0;
@@ -32,16 +36,24 @@ namespace FirstConsoleApp
             mean = (decimal)sum / Numbers.Length;
             return mean;
         }
+
+
+
+
+
+
+
         private int CalculateMedian()
         {
             //MEDIAN CALCULATION
-            var sortedData = Numbers.OrderBy(i => i).ToArray();
-            var n = sortedData.Length;
-            var median = n % 2 == 0
-                ? (sortedData[n / 2 - 1] + sortedData[n / 2]) / 2
-                : sortedData[n / 2];
-            return median;
+            Array.Sort(Numbers);
+            int m = (Numbers.Length) / 2;
+            int n = Numbers[m];
+            return n;
         }
+
+
+
 
 
 

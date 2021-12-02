@@ -34,6 +34,7 @@ namespace FirstConsoleApp
         }
         private int CalculateMedian()
         {
+            //MEDIAN CALCULATION
             var sortedData = Numbers.OrderBy(i => i).ToArray();
             var n = sortedData.Length;
             var median = n % 2 == 0

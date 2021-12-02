@@ -1,10 +1,9 @@
 ﻿using System;
-
 namespace FirstConsoleApp
 {
     internal class Program
     {
-        // some test data
+        // some test data array
         static int[] data = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
         
         static void Main(string[] args)

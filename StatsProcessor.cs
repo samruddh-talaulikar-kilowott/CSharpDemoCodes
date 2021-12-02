@@ -14,13 +14,13 @@ namespace FirstConsoleApp
         internal StatsResult GetStatsProcessorResult()
         {
             var result = new StatsResult();
-            result.Mean = CalculateAverage();
+            result.Mean = CalculateMean();
             result.Median = CalculateMedian();
             result.Mode = CalculateMode();
             return result;
         }
 
-        private decimal CalculateAverage()
+        private decimal CalculateMean()
         {
             int sum = 0;
             decimal mean = 0;

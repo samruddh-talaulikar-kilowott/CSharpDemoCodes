@@ -1,14 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace CSharpDemoCodes
+﻿using System.Linq;
+
+namespace FirstConsoleApp
 {
+    /// <summary>
+    /// This class will perform some basic statistics calculations
+    /// </summary>
+    /// 
     internal class StatsProcessor
     {
+        // data set that is provided to the object is encapsulatd
         internal int[] Numbers { private get; set; }
-        public decimal Mean()
+
+        internal StatsResult GetStatsProcessorResult()
+        {
+            var result = new StatsResult();
+            result.Mean = CalculateAverage();
+            result.Median = CalculateMedian();
+            result.Mode = CalculateMode();
+            return result;
+        }
+
+        private decimal CalculateAverage()
         {
             int sum = 0;
             decimal mean = 0;
@@ -20,15 +32,19 @@ namespace CSharpDemoCodes
             mean = (decimal)sum / Numbers.Length;
             return mean;
         }
-        public int Median()
+        private int CalculateMedian()
         {
-            //MEDIAN CALCULATION
-            Array.Sort(Numbers);
-            int m = (Numbers.Length) / 2;
-            int n = Numbers[m];
-            return n;
+            var sortedData = Numbers.OrderBy(i => i).ToArray();
+            var n = sortedData.Length;
+            var median = n % 2 == 0
+                ? (sortedData[n / 2 - 1] + sortedData[n / 2]) / 2
+                : sortedData[n / 2];
+            return median;
         }
-        public int Mode()
+
+
+
+        private int CalculateMode()
         {
             //MODE CALCULATION
             int maxcount = 0, maxnum = 0;
@@ -50,5 +66,7 @@ namespace CSharpDemoCodes
             }
             return maxnum;
         }
+
+
     }
 }
